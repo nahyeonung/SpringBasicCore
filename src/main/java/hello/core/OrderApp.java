@@ -1,7 +1,7 @@
 package hello.core;
 
-import hello.core.Order.Order;
-import hello.core.Order.OrderService;
+import hello.core.order.Order;
+import hello.core.order.OrderService;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
@@ -21,7 +21,7 @@ public class OrderApp {
         OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
         Long memberId = 1L;
-        Member member = new Member(memberId, "MemberA", Grade.VIP);
+        Member member = new Member(memberId, "Hyeonung", Grade.VIP);
         memberService.join(member);
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);

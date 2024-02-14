@@ -10,7 +10,7 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationContextBasicFind {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -32,6 +32,8 @@ public class ApplicationContextBasicFind {
     @DisplayName("이름없이 타입으로만 조회")
     void findBeanByType(){
         MemberService memberService = ac.getBean(MemberService.class);
+        System.out.println(MemberService.class);
+        System.out.println(memberService);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 

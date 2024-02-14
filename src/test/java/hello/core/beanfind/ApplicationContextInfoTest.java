@@ -25,7 +25,6 @@ public class ApplicationContextInfoTest {
     @DisplayName("애플리케이션 빈 출력하기")
     void findApplicationBean(){
         //우리가 등록한 빈들만 출력
-        //우리가 등록한 빈들만 출력
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             BeanDefinition beanDefinition =  ac.getBeanDefinition(beanDefinitionName);
