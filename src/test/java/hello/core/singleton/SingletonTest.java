@@ -5,6 +5,8 @@ import hello.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -40,5 +42,23 @@ public class SingletonTest {
 
         //인스턴스가 같은지 비교할 땐 same, 해당 인스턴스의 데이터(값)을 비교할 땐 equals
         assertThat(singletonService1).isSameAs(singletonService2);
+    }
+
+    @Test
+    @DisplayName("스프링 컨테이너와 싱글톤")
+    void springContainer() {
+        //AppConfig appConfig = new AppConfig();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        //스프링 컨테이너가 싱글턴 패턴을 자동으로 적용하기 때문에 지저분한 코드 없이 바로 싱글턴 객체를 생성하고 호출이 가능함.
+        MemberService memberService1 = ac.getBean("memberService", MemberService.class);
+        MemberService memberService2 = ac.getBean("memberService", MemberService.class);
+
+        //스프링 컨테이너가 자동으로 싱글턴 객체를 생성해주기 때문에 두 객체의 참조값은 같음.
+        System.out.println("memberService1 = " + memberService1);
+        System.out.println("memberService2 = " + memberService2);
+
+        //memberService1 != memberService2
+
     }
 }
