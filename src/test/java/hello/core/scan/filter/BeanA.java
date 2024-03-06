@@ -1,5 +1,7 @@
 package hello.core.scan.filter;
 
-@MyIncludeComponent
+import org.springframework.stereotype.Component;
+
+@Component
 public class BeanA {
 }

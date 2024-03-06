@@ -23,5 +23,11 @@ public class AutoAppConfigTest {
 
         System.out.println(memberService);
         System.out.println(memberService1);
+
+        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            Object bean = ac.getBean(beanDefinitionName);
+            System.out.println("bean name : " + beanDefinitionName + " bean : " + bean);
+        }
     }
 }
