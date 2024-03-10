@@ -8,5 +8,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
+@Qualifier("mainDiscountPolicy")
 public @interface MainDiscountPolicy {
 }
