@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
-@Configuration
+
 //spring에서 bean을 자동으로 스캔해서 등록해주는 어노테이션
 @ComponentScan(
         // basePackages = "hello.core.member" => 컴포넌트 스캔을 시작할 위치 지정. 지정하지 않으면 @ComponentScan이 붙은 파일 패키지가 기준
