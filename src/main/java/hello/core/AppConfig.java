@@ -1,5 +1,6 @@
 package hello.core;
 
+import hello.core.discount.RateDiscountPolicy;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 import hello.core.discount.DiscountPolicy;
@@ -59,6 +60,6 @@ public class AppConfig {
 
     @Bean
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
